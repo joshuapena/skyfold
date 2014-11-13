@@ -14,7 +14,7 @@ body {
 	background-image: url('../images/welcomeRobot.png');
 	height: 600px;
 	background-repeat: no-repeat;
-	margin-left: 30%;
+	background-position: center;
 }
 
 h1 {
