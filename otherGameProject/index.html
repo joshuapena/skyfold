@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Other Game Project</title>
+		<link rel="stylesheet" href="assets/css/index.css">
+	</head>
+	<body>
+		<div id="canvasContainer">
+			<p>Jump using the 'Up' Arrow Key and Shoot using the Space Bar
+			<br>Good Luck and Have Fun</p>
+			<input id="startButton" type="button" value="Start" onclick="start()" />
+			<canvas id="world" width="600" height="300">
+			This brower can not run this game (canvas support missing).
+			</canvas>
+		</div>
+
+		<script type="text/javascript" src="javascript/lib/Game.js"></script>
+		<script type="text/javascript" src="javascript/lib/init.js"></script>
+		<script type="text/javascript" src="javascript/lib/SpriteLoader.js"></script>
+		<script type="text/javascript" src="javascript/lib/SoundLoader.js"></script>
+		<script type="text/javascript" src="javascript/lib/collider.js"></script>
+		<script type="text/javascript" src="javascript/lib/update.js"></script>
+		<script type="text/javascript" src="javascript/lib/draw.js"></script>
+		<script type="text/javascript" src="javascript/lib/SpriteAnimation.js"></script>
+		<script type="text/javascript" src="javascript/gameentities/World.js"></script>
+		<script type="text/javascript" src="javascript/gameentities/Bullet.js"></script>
+		<script type="text/javascript" src="javascript/gameentities/Player.js"></script>
+		<script type="text/javascript" src="javascript/gameentities/Enemy.js"></script>
+		<script type="text/javascript" src="javascript/gameentities/Explosion.js"></script>
+		<script type="text/javascript" src="javascript/gameentities/Background.js"></script>
+	</body>
+</html>
