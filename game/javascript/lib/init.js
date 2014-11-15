@@ -21,7 +21,7 @@ function initGame() {
 	for (i = 0; i < 17; i++) {
 		spriteNames.push("explosion/explosion-" + i);
 	}
-	spriteLoader.load("./assets/game/images", spriteNames, ".png", function (loadedSprites) {
+	spriteLoader.load("./assets/images", spriteNames, ".png", function (loadedSprites) {
 		for (var spriteName in loadedSprites) {
 			sprites[spriteName] = loadedSprites[spriteName];
 		}
