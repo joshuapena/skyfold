@@ -1,0 +1,29 @@
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700);
+
+.container {
+	position: relative;
+}
+
+.total {
+}
+
+.div1 {
+	left: 0;
+	position: absolute;
+	text-align: left;
+}
+
+.div2 {
+	text-align: right;
+	position: absolute;
+	left: 1000px;
+}
+
+.div3 {
+	position: absolute;
+	left: 800px;
+}
+
+.top {
+	text-align: center;
+}
