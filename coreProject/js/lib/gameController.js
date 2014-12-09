@@ -11,6 +11,8 @@ var Controller = function(num) {
 };
 
 Controller.prototype.update = function() {
+    console.log(this.controller.buttons[0].pressed);
+    this.controller = navigator.getGamepads()[num];
     this.buttonA = this.controller.buttons[0].pressed;
     this.xAxis = this.controller.axes[0];
     this.yAxis = this.controller.axes[1];
@@ -45,8 +47,8 @@ $(document).ready(function() {
             if (navigator.getGamepads()[0]) {
                 if (!control.hasController) {
                     $(window).trigger("controllerconnected");
-                    window.clearInterval(checkController);
                 }
+                window.clearInterval(checkController);
             }
         }, 500);
 
