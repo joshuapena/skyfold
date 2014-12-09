@@ -4,7 +4,8 @@ var Control = function() {
 };
 
 var Controller = function(num) {
-    this.controller = navigator.getGamepads()[num];
+    this.num = num;
+    this.controller = navigator.getGamepads()[this.num];
     this.buttonA = this.controller.buttons[0].pressed;
     this.xAxis = this.controller.axes[0];
     this.yAxis = this.controller.axes[1];
@@ -12,7 +13,7 @@ var Controller = function(num) {
 
 Controller.prototype.update = function() {
     console.log(this.controller.buttons[0].pressed);
-    this.controller = navigator.getGamepads()[num];
+    this.controller = navigator.getGamepads()[this.num];
     this.buttonA = this.controller.buttons[0].pressed;
     this.xAxis = this.controller.axes[0];
     this.yAxis = this.controller.axes[1];
