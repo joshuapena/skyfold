@@ -47,6 +47,9 @@ var Player = function(world, audio, controlOptions) {
     this.reachEnd = false;
     if (controlOptions.hasController) {
         this.controller = new Controller(controlOptions.num);
+    } else {
+        this.controller = {
+        };
     }
 };
 
@@ -71,7 +74,10 @@ Player.prototype.collide = function(y) {
 };
 
 Player.prototype.update = function() {
-    this.controller.update();
+    try {
+        this.controller.update();
+    } catch (TypeError) {
+    }
 
 	// Jump
 	if (keydown[38] || 

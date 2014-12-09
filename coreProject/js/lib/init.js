@@ -8,6 +8,7 @@ var start = function(params, controlOptions) {
     document.getElementById("sexUndo").style.display = "none";
     document.getElementById("ethnicityUndo").style.display = "none";
     document.getElementById("majorUndo").style.display = "none";
+    document.getElementById("controllerPrompt").style.display = "none";
 	
 	var sprites = initGame();
 	var audio = initSound();

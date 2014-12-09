@@ -100,11 +100,9 @@ Params.prototype.check = function() {
     if (this.sexChosen && this.ethnicityChosen && this.majorChosen) {
         document.getElementById("startButton").style.display = "inline";
         document.getElementById("controllerPrompt").style.display = "inline";
-        document.getElementById("controllerDisplay").style.display = "inline";
     } else {
         document.getElementById("startButton").style.display = "none";
         document.getElementById("controllerPrompt").style.display = "none";
-        document.getElementById("controllerDisplay").style.display = "none";
     }
 };
 
