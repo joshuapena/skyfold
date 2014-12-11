@@ -7,6 +7,7 @@ var World = function(context, options, sprites) {
 	this.sprites = sprites;
 	
 	this.players = [];
+    this.controllers = [];
 	this.platforms = [];
     this.spikes = [];
     this.assets = [];

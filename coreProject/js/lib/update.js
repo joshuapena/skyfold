@@ -21,6 +21,18 @@ var update = function (game, params, audio) {
 			});
 		}
 	);
+    
+    game.world.controllers.forEach( function(controller) {
+        controller.update();
+        if (controller.buttonSelect) {
+            game.world.players.forEach (function(player) {
+                player.active = false;
+            });
+            game.world.addPlayer(new Player(game.world, audio, controller));
+            console.log("reset");
+            controller.buttonSelect = false;
+        }
+    });
 
     // Calls update for player function
 	game.world.players.forEach( function(player) {
@@ -39,11 +51,15 @@ var update = function (game, params, audio) {
 		return platform.active;
 	});
 
+    if (game.world.players.length < 1) {
+       game.world.died = true;
+    } else {
+       game.world.died = false;
+    }
+
     // Start of the level layout
     if (playerEnd === true) {
         game.world.end = true;
-    } else if (game.world.players.length < 1) {
-       game.world.died = true; 
     } else if (spawn && params.percent < 40) {
         // End Flag
         game.world.assets.push (new EndLine(game.world, {

@@ -1,6 +1,6 @@
 "use strict";
 
-var Player = function(world, audio, controlOptions) {
+var Player = function(world, audio, controller) {
 	this.world = world;
 	this.audio = audio;
 	this.idleLeftAnimation = new SpriteAnimation("connor/connorL", 2, 1, 32);
@@ -11,8 +11,8 @@ var Player = function(world, audio, controlOptions) {
 	this.jumpRightAnimation = new SpriteAnimation("connor/connorR", 1, 6, 32);
 	this.width = 20;
 	this.height = 38;
-	this.x = this.world.width / 20;
-	this.y = this.world.height - this.height;
+	this.x = 30;
+	this.y = 232;
 	this.speed = 3;
 	this.velX = 0;
 	this.velY = 0;
@@ -45,12 +45,7 @@ var Player = function(world, audio, controlOptions) {
 
     this.lives = 1;
     this.reachEnd = false;
-    if (controlOptions.hasController) {
-        this.controller = new Controller(controlOptions.num);
-    } else {
-        this.controller = {
-        };
-    }
+    this.controller = controller;
 };
 
 var keydown = [];
@@ -74,11 +69,6 @@ Player.prototype.collide = function(y) {
 };
 
 Player.prototype.update = function() {
-    try {
-        this.controller.update();
-    } catch (TypeError) {
-    }
-
 	// Jump
 	if (keydown[38] || 
             this.controller.buttonA || 

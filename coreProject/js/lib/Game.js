@@ -17,8 +17,16 @@ var Game = function(canvas, sprites, audio, params, controlOptions) {
 	};
 	
 	this.world = new World(this.ctx, worldOptions, this.sprites);
+
+    if (controlOptions.hasController) {
+        this.controller = new Controller(controlOptions.num);
+        this.world.controllers.push(this.controller);
+    } else {
+        this.controller = {
+        };
+    }
 	
-	this.world.addPlayer(new Player(this.world, this.audio, controlOptions));
+	this.world.addPlayer(new Player(this.world, this.audio, this.controller));
 	
 	var game = this;
 	
