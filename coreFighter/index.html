@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Core Project</title>
+		<link rel="stylesheet" href="assets/css/default.css" />
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<h1>Merrill Core Project</h1>
+			<p>By : Joshua Pena</p>
+			<p>Merrill 80B - 02</p> <br>
+		</div>
+		<div class="buttonContainer">
+
+			<div class="player" id="playerOne">
+				<p id="instructionsChoose">Choose the following buttons to start the game.</p>
+
+				<div class="container" id="sex">
+					<p id="checkSex" >Please choose a 'Sex'</p>
+					<br>
+					<input id="male" value="Male" 
+						onclick="paramsPlayerOne.chooseSex('Male')" type="button">
+					<input id="female" value="Female" 
+						onclick="paramsPlayerOne.chooseSex('Female')" type="button">
+					<input id="noAnswerSex" value="Skip" 
+						onclick="paramsPlayerOne.chooseSex('Skip')" type="Button">
+					<br>
+					<br>
+				</div>
+
+				<div class="container" id="ethnicity">
+					<p id="checkEthnicity">Please choose an 'Ethinicity'</p>
+					<br>
+					<input id="white" value="White" 
+						onclick="paramsPlayerOne.chooseEthnicity('White')" type="button">
+					<input id="asian" value="Asian or Pacific Islander" 
+						onclick="paramsPlayerOne.chooseEthnicity('Asian or Pacific Islander')" type="button">
+					<input id="black" value="Black" onclick="paramsPlayerOne.chooseEthnicity('Black')" 
+						type="button">
+					<input id="hispanic" value="Hispanic or Latino" 
+						onclick="paramsPlayerOne.chooseEthnicity('Hispanic or Latino')" type="button">
+					<input id="americanIndian" value="American Indian or Alaska Native" 
+						onclick="paramsPlayerOne.chooseEthnicity('American Indian or Alaska Native')" type="button">
+					<input id="noAnswerEthnicity" value="Skip" 
+						onclick="paramsPlayerOne.chooseEthnicity('Skip')" type="button">
+					<br>
+					<br>
+				</div>
+
+				<div class="container" id="major">
+					<p id="checkMajor">Please choose a 'Major'</p>
+					<br>
+					<input id="bio" value="Biological and Agricultural Sciences"
+						onclick="paramsPlayerOne.chooseMajor('Biological and Agricultural Sciences')" type="button">
+					<input id="engineering" value="Engineering"
+						onclick="paramsPlayerOne.chooseMajor('Engineering')"type="button">
+					<input id="math" value="Mathematics, Statistics, and Computer Sciences"
+						onclick="paramsPlayerOne.chooseMajor('Mathematics, Statistics, and Computer Sciences')"type="button">
+					<input id="physical" value="Physical Sciences"
+						onclick="paramsPlayerOne.chooseMajor('Physical Sciences')"type="button">
+					<input id="social" value="Social and Behavioral Sciences"
+						onclick="paramsPlayerOne.chooseMajor('Social and Behavioral Sciences')"type="button">
+					<input id="noAnswerMajor" value="Skip"
+						onclick="paramsPlayerOne.chooseMajor('Skip')"type="button">
+					<br>
+				</div>
+
+				<br>
+
+				<div class="undo" id="sexUndo">
+					<input class="undoButton" id="sexUndoButton" value="Change Sex" 
+						onclick="paramsPlayerOne.undoSex()" type="button">
+				</div>
+				<div class="undo" id="ethnicityUndo">
+					<input class="undoButton" id="ethnicityUndoButton" value="Change Ethnicity"
+						onclick="paramsPlayerOne.undoEthnicity()" type="button">
+				</div>
+				<div class="undo" id="majorUndo">
+					<input class="undoButton" id="majorUndoButton" value="Change Major"
+						onclick="paramsPlayerOne.undoMajor()" type="button">
+				</div>
+			</div>
+
+			<div class="player" id="playerTwo">
+				<p id="instructionsChooseTwo">Choose the following buttons to start the game.</p>
+
+				<div class="container" id="sexTwo">
+					<p id="checkSexTwo" >Please choose a 'Sex'</p>
+					<br>
+					<input id="maleTwo" value="Male" 
+						onclick="paramsPlayerTwo.chooseSex('Male')" type="button">
+					<input id="femaleTwo" value="Female" 
+						onclick="paramsPlayerTwo.chooseSex('Female')" type="button">
+					<input id="noAnswerSexTwo" value="Skip" 
+						onclick="paramsPlayerTwo.chooseSex('Skip')" type="Button">
+					<br>
+					<br>
+				</div>
+
+				<div class="container" id="ethnicityTwo">
+					<p id="checkEthnicityTwo">Please choose an 'Ethinicity'</p>
+					<br>
+					<input id="whiteTwo" value="White" 
+						onclick="paramsPlayerTwo.chooseEthnicity('White')" type="button">
+					<input id="asianTwo" value="Asian or Pacific Islander" 
+						onclick="paramsPlayerTwo.chooseEthnicity('Asian or Pacific Islander')" type="button">
+					<input id="blackTwo" value="Black" onclick="paramsPlayerTwo.chooseEthnicity('Black')" 
+						type="button">
+					<input id="hispanicTwo" value="Hispanic or Latino" 
+						onclick="paramsPlayerTwo.chooseEthnicity('Hispanic or Latino')" type="button">
+					<input id="americanIndianTwo" value="American Indian or Alaska Native" 
+						onclick="paramsPlayerTwo.chooseEthnicity('American Indian or Alaska Native')" type="button">
+					<input id="noAnswerEthnicityTwo" value="Skip" 
+						onclick="paramsPlayerTwo.chooseEthnicity('Skip')" type="button">
+					<br>
+					<br>
+				</div>
+
+				<div class="container" id="majorTwo">
+					<p id="checkMajorTwo">Please choose a 'Major'</p>
+					<br>
+					<input id="bioTwo" value="Biological and Agricultural Sciences"
+						onclick="paramsPlayerTwo.chooseMajor('Biological and Agricultural Sciences')" type="button">
+					<input id="engineeringTwo" value="Engineering"
+						onclick="paramsPlayerTwo.chooseMajor('Engineering')"type="button">
+					<input id="mathTwo" value="Mathematics, Statistics, and Computer Sciences"
+						onclick="paramsPlayerTwo.chooseMajor('Mathematics, Statistics, and Computer Sciences')"type="button">
+					<input id="physicalTwo" value="Physical Sciences"
+						onclick="paramsPlayerTwo.chooseMajor('Physical Sciences')"type="button">
+					<input id="socialTwo" value="Social and Behavioral Sciences"
+						onclick="paramsPlayerTwo.chooseMajor('Social and Behavioral Sciences')"type="button">
+					<input id="noAnswerMajorTwo" value="Skip"
+						onclick="paramsPlayerTwo.chooseMajor('Skip')"type="button">
+					<br>
+				</div>
+
+
+				<div class="undo" id="sexUndoTwo">
+					<input class="undoButton" id="sexUndoButtonTwo" value="Change Sex" 
+						onclick="paramsPlayerTwo.undoSex()" type="button">
+				</div>
+				<div class="undo" id="ethnicityUndoTwo">
+					<input class="undoButton" id="ethnicityUndoButtonTwo" value="Change Ethnicity"
+						onclick="paramsPlayerTwo.undoEthnicity()" type="button">
+				</div>
+				<div class="undo" id="majorUndoTwo">
+					<input class="undoButton" id="majorUndoButtonTwo" value="Change Major"
+						onclick="paramsPlayerTwo.undoMajor()" type="button">
+				</div>
+			</div>
+
+
+		</div>
+		<br/>
+		<div style="clear:both;"></div>
+
+		<div id="canvasContainer">
+			<p id="completeAnswer"></p>
+			<p id="completeAnswerTwo"></p>
+			<div id="controllerPrompt"></div>
+			<div id="controllerPromptTwo">foo</div>
+			<br/>
+			<input id="startButton" type="button" value="Start" onclick="start(paramsPlayerOne, controlOne, paramsPlayerTwo, controlTwo)" />
+			<canvas id="world" width="600" height="300">
+				This browser can not run this game (canvas support missing).
+			</canvas>
+			<br>
+			<p id="instructions">Move Around Using the Arrow Keys and try to get to the end.<br>Good Luck and Have Fun.<br></p>
+		</div>
+		
+		<script type="text/javascript" src="js/lib/Game.js"></script>
+		<script type="text/javascript" src="js/lib/getParams.js"></script>
+		<script type="text/javascript" src="js/lib/getParamsSecond.js"></script>
+		<script type="text/javascript" src="js/lib/gameController.js"></script>
+		<script type="text/javascript" src="js/lib/init.js"></script>
+		<script type="text/javascript" src="js/lib/SpriteLoader.js"></script>
+		<script type="text/javascript" src="js/lib/SoundLoader.js"></script>
+		<script type="text/javascript" src="js/lib/collider.js"></script>
+		<script type="text/javascript" src="js/lib/update.js"></script>
+		<script type="text/javascript" src="js/lib/draw.js"></script>
+		<script type="text/javascript" src="js/lib/SpriteAnimation.js"></script>
+		<script type="text/javascript" src="js/gameentities/World.js"></script>
+		<script type="text/javascript" src="js/gameentities/Player.js"></script>
+		<script type="text/javascript" src="js/gameentities/Bullet.js"></script>
+		<script type="text/javascript" src="js/gameentities/HealthBar.js"></script>
+		<script type="text/javascript" src="js/gameentities/Platform.js"></script>
+		<script type="text/javascript" src="js/gameentities/Spike.js"></script>
+		<script type="text/javascript" src="js/gameentities/MovingSpike.js"></script>
+		<script type="text/javascript" src="js/gameentities/EndLine.js"></script>
+
+		<script>
+		</script>
+	</body>
+</html>
