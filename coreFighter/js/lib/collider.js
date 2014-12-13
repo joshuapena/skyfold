@@ -40,7 +40,7 @@ var collider = function(game) {
                 if (player.type !== playerTwo.type) {
                     console.log("two players");
                     if (player.punching) {
-                        playerTwo.explode(15);
+                        playerTwo.explode(15, player);
                     }
                 }
             }

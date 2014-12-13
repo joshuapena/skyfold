@@ -22,7 +22,6 @@ var Bullet = function(world, options, audio) {
 	
 	this.width = options.width;
 	this.height = options.height;
-	//this.hypot = Math.sqrt( Math.pow(this.width, 2) + Math.pow(this.height, 2));
 	this.velX = this.speed * Math.cos(this.angle);
 	this.velY = this.speed * Math.sin(this.angle);
 	this.accelerationX = options.acceleration * Math.cos(this.angle);
@@ -40,35 +39,6 @@ var Bullet = function(world, options, audio) {
 		width: this.hitboxMetrics.width,
 		height: this.hitboxMetrics.height
 	};
-	
-	/*
-	this.pointsMetrics = {
-		x0: 0,
-		y0: 0,
-		x1: this.width * Math.cos(this.angle),
-		y1: this.width * Math.sin(this.angle),
-		x2: this.width,
-		y2: this.height,
-		x3: 0,
-		y3: this.height
-		x1: this.width * Math.cos(this.angle),
-		y1: this.width * Math.sin(this.angle),
-		x2: this.hypot * Math.cos(this.angle),
-		y2: this.hypot * Math.sin(this.angle),
-		x3: this.height * Math.cos(this.angle),
-		y3: this.height * Math.sin(this.angle)
-	};
-	this.points = {
-		x0: this.x + this.pointsMetrics.x0,
-		y0: this.y + this.pointsMetrics.y0,
-		x1: this.x + this.pointsMetrics.x1,
-		y1: this.y + this.pointsMetrics.y1,
-		x2: this.x + this.pointsMetrics.x2,
-		y2: this.y + this.pointsMetrics.y2,
-		x3: this.x + this.pointsMetrics.x3,
-		y3: this.y + this.pointsMetrics.y3
-	};
-	*/
 };
 
 Bullet.prototype.explode = function(typeOfOther) {

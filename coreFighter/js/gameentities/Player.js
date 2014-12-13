@@ -79,13 +79,24 @@ Player.prototype.explode = function(damage, object) {
     if (this.punching) {
     }
     if (!this.hit) {
-        if (!this.blocking) {
-            this.lives -= damage;
-            this.hit = true;
-            var hitTimeOut = setTimeout(function() {
-                that.hit = false;
-                clearTimeout(hitTimeOut);
-            }, 400);
+        if (object) {
+            if (!this.blocking || object.punching) {
+                this.lives -= damage;
+                this.hit = true;
+                var hitTimeOut = setTimeout(function() {
+                    that.hit = false;
+                    clearTimeout(hitTimeOut);
+                }, 400);
+            }
+        } else {
+            if (!this.blocking) {
+                this.lives -= damage;
+                this.hit = true;
+                var hitTimeOut = setTimeout(function() {
+                    that.hit = false;
+                    clearTimeout(hitTimeOut);
+                }, 400);
+            }
         }
     }
     if (this.lives < 1) {
@@ -230,7 +241,7 @@ Player.prototype.update = function() {
 Player.prototype.draw = function() {
 	var that = this;
 	this.state.draw(this.x, this.y, function(spriteName, x, y) {
-		that.width =  3 * that.world.sprites[spriteName].width;
+		that.width = 3 * that.world.sprites[spriteName].width;
 		that.height = 3 * that.world.sprites[spriteName].height;
 		that.world.drawSprite(spriteName, x, y, that.width, that.height);
         that.hitboxMetrics.width = that.width;

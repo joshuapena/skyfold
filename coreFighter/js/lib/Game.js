@@ -4,7 +4,6 @@ var Game = function(canvas, sprites, audio, paramsOne, controlOptionsOne, params
 	this.ctx = canvas.getContext("2d");
 	this.sprites = sprites;
 	this.audio = audio;
-	this.backgroundSound = "casanova";
 
     console.log(paramsOne.sex);
     console.log(paramsOne.ethnicity);
@@ -24,10 +23,10 @@ var Game = function(canvas, sprites, audio, paramsOne, controlOptionsOne, params
         direction : "right",
         healthX : 50,
         percent : paramsOne.percent,
-        sprite : "connor"
+        sprite : "alien"
     }));
 	this.world.addPlayer(new Player(this.world, Bullet, this.audio, controlOptionsTwo, {
-        x : this.world.width * 18 / 20,
+        x : this.world.width * 17 / 20,
         y : this.world.height,
         type : "playerTwo",
         direction : "left",
