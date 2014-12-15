@@ -14,6 +14,8 @@ var start = function(paramsOne, controlOptionsOne, paramsTwo, controlOptionsTwo)
     document.getElementById("majorUndoTwo").style.display = "none";
     document.getElementById("controllerPrompt").style.display = "none";
     document.getElementById("controllerPromptTwo").style.display = "none";
+    document.getElementById("who").style.display = "none";
+    document.getElementById("whoTwo").style.display = "none";
 	
 	var sprites = initGame();
 	var audio = initSound();

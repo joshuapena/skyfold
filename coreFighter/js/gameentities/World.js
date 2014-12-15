@@ -12,6 +12,7 @@ var World = function(context, options, sprites) {
     this.assets = [];
     this.bullets = [];
     this.healthBar = [];
+    this.controllers = [];
 	
     this.died = false;
 	this.end = false;

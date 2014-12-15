@@ -1,6 +1,8 @@
 var Control = function(num) {
     this.hasController = false;
     this.num = num;
+
+    this.result = "Win";
 };
 
 var ControllersReady = function() {

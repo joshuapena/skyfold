@@ -16,6 +16,7 @@
 		<div class="buttonContainer">
 
 			<div class="player" id="playerOne">
+				<h4 id="who">Player 1  :</h4>
 				<p id="instructionsChoose">Choose the following buttons to start the game.</p>
 
 				<div class="container" id="sex">
@@ -66,9 +67,8 @@
 					<input id="noAnswerMajor" value="Skip"
 						onclick="paramsPlayerOne.chooseMajor('Skip')"type="button">
 					<br>
+					<br>
 				</div>
-
-				<br>
 
 				<div class="undo" id="sexUndo">
 					<input class="undoButton" id="sexUndoButton" value="Change Sex" 
@@ -85,6 +85,7 @@
 			</div>
 
 			<div class="player" id="playerTwo">
+				<h4 id="whoTwo">Player 2 :</h4>
 				<p id="instructionsChooseTwo">Choose the following buttons to start the game.</p>
 
 				<div class="container" id="sexTwo">
@@ -135,6 +136,7 @@
 					<input id="noAnswerMajorTwo" value="Skip"
 						onclick="paramsPlayerTwo.chooseMajor('Skip')"type="button">
 					<br>
+					<br>
 				</div>
 
 
@@ -168,7 +170,7 @@
 				This browser can not run this game (canvas support missing).
 			</canvas>
 			<br>
-			<p id="instructions">Move Around Using the Arrow Keys and try to get to the end.<br>Good Luck and Have Fun.<br></p>
+			<p id="instructions">Move Around Using the Left Joystick.<br/>Shoot : A<br>Shield : B<br/>Punch : Y<br/>Good Luck and Have Fun.<br></p>
 		</div>
 		
 		<script type="text/javascript" src="js/lib/Game.js"></script>

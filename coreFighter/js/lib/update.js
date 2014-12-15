@@ -10,7 +10,9 @@ var playerEnd = false;
 var test = true;
 var spawn = true;
 
-var update = function (game, params, audio) {
+var playerReset = [false, false];
+
+var update = function (game, audio) {
     // Calls the update function for all objects
 	[game.world.platforms,
         game.world.bullets
@@ -23,7 +25,49 @@ var update = function (game, params, audio) {
 	);
 
     // Calls update for player function
-	game.world.players.forEach( function(player) {
+    for (var i = 0; i < game.world.controllers.length; i++) {
+        game.world.controllers[i].update();
+        if (game.world.controllers[i].buttonSelect) {
+            playerReset[i] = true;
+        } else {
+            playerReset[i] = false;
+        }
+    }
+
+    if (playerReset[0] && playerReset[1]) {
+        console.log("reseting . . .");
+        game.world.players.forEach(function(player) {
+            player.active = false;
+        });
+        game.world.addPlayer(new Player(game.world, Bullet, game.audio, game.controllerOne, {
+            x : game.world.width / 20,
+            y : game.world.height / 2,
+            type : "playerOne",
+            direction : "right",
+            healthX : 50,
+            percent : game.paramsOne.percent,
+            result : game.paramsOne.result,
+            sprite : "connor"
+        }));
+        game.world.addPlayer(new Player(game.world, Bullet, game.audio, game.controllerTwo, {
+            x : game.world.width * 17 / 20,
+            y : game.world.height / 2,
+            type : "playerTwo",
+            direction : "left",
+            healthX : 350,
+            percent : game.paramsTwo.percent,
+            result : game.paramsTwo.result,
+            sprite : "evilConnor"
+        }));
+
+        game.world.died = false;
+        console.log("reset");
+        for (var i = 0; i < playerReset.length; i++) {
+            playerReset[i] = false;
+        };
+    }
+
+    game.world.players.forEach( function(player) {
         player.update();
         if (player.reachEnd === true) {
             playerEnd = true;
@@ -46,7 +90,7 @@ var update = function (game, params, audio) {
     // Start of the level layout
     if (playerEnd === true) {
         game.world.end = true;
-    } else if (game.world.players.length < 1) {
+    } else if (game.world.players.length < 2) {
        game.world.died = true; 
     } else if (spawn) {
         // The floor

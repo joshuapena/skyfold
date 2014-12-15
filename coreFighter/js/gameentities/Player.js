@@ -65,13 +65,8 @@ var Player = function(world, Bullet, audio, controlOptions, options) {
     
     this.lives = options.percent;
 
-    if (controlOptions.hasController) {
-        this.controller = new Controller(controlOptions.num);
-        console.log("Player " + this.controller.num + " online, sir.");
-    } else {
-        this.controller = {
-        };
-    }
+    this.controller = controlOptions;
+    console.log("Player " + this.controller.num + " online, sir.");
 };
 
 Player.prototype.explode = function(damage, object) {
@@ -116,11 +111,6 @@ Player.prototype.collide = function(y) {
 };
 
 Player.prototype.update = function() {
-    try {
-        this.controller.update();
-    } catch (TypeError) {
-    }
-
 	// Jump
 	if (!this.action && this.controller.yAxis < -0.5) {
 		if (!this.jumping) {
