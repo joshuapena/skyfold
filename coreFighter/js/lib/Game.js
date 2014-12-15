@@ -10,6 +10,8 @@ var Game = function(canvas, sprites, audio, paramsOne, controlOptionsOne, params
     console.log(paramsOne.sex);
     console.log(paramsOne.ethnicity);
     console.log(paramsOne.major);
+
+    this.audio["start"].play();
 		
 	var worldOptions = {
 		width : canvas.width,
@@ -31,6 +33,13 @@ var Game = function(canvas, sprites, audio, paramsOne, controlOptionsOne, params
         healthX : 50,
         percent : this.paramsOne.percent,
         result : this.paramsOne.result,
+        walking : "walking1",
+        shield : "shield1",
+        punch : "punch1",
+        hitStart : 1,
+        hitEnd : 4,
+        fireball : "fireball1",
+        jump : "jump1",
         sprite : "connor"
     }));
 	this.world.addPlayer(new Player(this.world, Bullet, this.audio, this.controllerTwo, {
@@ -41,6 +50,13 @@ var Game = function(canvas, sprites, audio, paramsOne, controlOptionsOne, params
         healthX : 350,
         percent : this.paramsTwo.percent,
         result : this.paramsTwo.result,
+        walking : "walking2",
+        shield : "shield2",
+        punch : "punch2",
+        hitStart : 4,
+        hitEnd : 7,
+        fireball : "fireball2",
+        jump : "jump2",
         sprite : "evilConnor"
     }));
 	
@@ -48,7 +64,7 @@ var Game = function(canvas, sprites, audio, paramsOne, controlOptionsOne, params
 	
 	var gameloop = setInterval(function() {
 		collider(game);
-		update(game, audio);
+		update(game, game.audio);
 		draw(game.world, {
             percentOne : paramsOne.percent,
             percentTwo : paramsTwo.percent,

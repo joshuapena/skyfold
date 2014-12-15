@@ -53,12 +53,15 @@ function initGame() {
 function initSound() {
 	var soundLoader = new SoundLoader();
 	var audio = {};
-	var audioNames = [];
-	var extensions = [];
+	var audioNames = ["fireball1", "fireball2", "gameover", "hit1", "hit2", "hit3", 
+        "hit4", "hit5", "hit6", "punch1", "punch2", "reset1", "reset2", 
+        "shield1", "shield2", "start", "walking1", "walking2", "jump1", "jump2"];
+	var extensions = [".wav", ".wav", ".wav", ".wav", ".wav", ".wav", ".wav", 
+        ".wav", ".wav", ".wav", ".wav", ".wav", ".wav", ".wav", ".wav", ".wav", ".wav", ".wav", ".wav", ".wav"];
 	soundLoader.load("./assets/sounds", audioNames, extensions, function (loadedAudio) {
 		for (var audioName in loadedAudio) {
-			//audio[audioName] = loadedAudio[audioName];
-			//audio[audioName].setVolume(20);
+			audio[audioName] = loadedAudio[audioName];
+			audio[audioName].setVolume(20);
 		}
 	});
 	return audio;
