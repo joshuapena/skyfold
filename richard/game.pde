@@ -5,7 +5,7 @@ int x = -100;                       // sets dot starting postion
 int r = 505;                        // right line starting position
 int l = 295;                        // left line starting position
 
-int background = 0;                 // default color of background
+int backgroundColor = 0;                 // default color of background
 int ball = 255;                     // default color of ball
 
 int page = 0;                       // sets default page to 0
@@ -65,7 +65,7 @@ void draw() {
   if (page == 1) {
     
     
-  background(background);
+  background(backgroundColor);
   strokeWeight(5);
   stroke(255,0,0);
   fill(0);
@@ -143,9 +143,9 @@ void draw() {
   }
   
   if (r < 436) {            // randomizes color of background when you reach Level 8
-    background = pick1();
+    backgroundColor = pick1();
   } else {
-    background = 0;
+    backgroundColor = 0;
   }
   
   
