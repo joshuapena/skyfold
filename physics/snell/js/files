@@ -1,0 +1,10 @@
+lib : 
+Game			| DONE
+collider		| DONE
+init			| DONE
+draw			| DONE
+update			| DONE
+
+gameentities : 
+World			| DONE
+Particles		| DONE

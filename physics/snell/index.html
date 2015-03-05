@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+		<title>Snell's Law</title>
+
+		<link rel="stylesheet" href="libs/bootstrap.min.css">
+		<link rel="stylesheet" href="libs/bootstrap-slider.css">
+		<link rel="stylesheet" href="css/index.css">
+		<script type="text/javascript" src="libs/jquery.min.js"></script>
+		<script type="text/javascript" src="libs/bootstrap.min.js"></script>
+		<script type="text/javascript" src="libs/bootstrap-slider.js"></script>
+    </head>
+	<body>
+		<h1>Snell's Law</h1>
+
+		<canvas id="world" width="1000" height="600">
+			This browser can not run this game (canvas support missing).
+		</canvas>
+
+		<div id="buttonContainer">
+			<input id="resetButton" class="btn btn-primary" type="button" value="Reset" />
+			<!--
+			<input id="wallButton" class="btn btn-success" type="button" value="Walls" />
+			-->
+			<input id="trailsButton" class="btn btn-info" type="button" value="Trail" />
+		</div>
+		<div>
+			<h5>Click to add new balls</h5>
+		</div>
+		<br />
+		<div>
+			<input id="slider" data-slider-id="slider" type="text" data-slider-min="1"
+				data-slider-max="2.42" data-slider-step="0.01" data-slider-value="1.33" />
+		</div>
+
+		<script type="text/javascript" src="js/Game.js"></script>
+		<script type="text/javascript" src="js/Particle.js"></script>
+		<script type="text/javascript" src="js/Trail.js"></script>
+		<script type="text/javascript" src="js/Material.js"></script>
+		<script type="text/javascript" src="js/World.js"></script>
+		<script type="text/javascript" src="js/collider.js"></script>
+		<script type="text/javascript" src="js/draw.js"></script>
+		<script type="text/javascript" src="js/init.js"></script>
+		<script type="text/javascript" src="js/update.js"></script>
+    </body>
+</html>
+
